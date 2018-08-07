@@ -1,0 +1,40 @@
+{
+  "name": "redux-tutorial",
+  "version": "1.0.0",
+  "description": "A 20 min quick start guide to utilize redux in your application",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Busyreadingsomething/redux-tutorial.git"
+  },
+  "keywords": [
+    "redux",
+    "react",
+    "tutorial"
+  ],
+  "author": "Makan Azarshahy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Busyreadingsomething/redux-tutorial/issues"
+  },
+  "homepage": "https://github.com/Busyreadingsomething/redux-tutorial#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "react": "^16.4.2",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "jest": "^23.4.2",
+    "webpack": "^4.16.5"
+  }
+}
