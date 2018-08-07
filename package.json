@@ -2,7 +2,7 @@
   "name": "redux-tutorial",
   "version": "1.0.0",
   "description": "A 20 min quick start guide to utilize redux in your application",
-  "main": "index.js",
+  "main": "server/index.js",
   "scripts": {
     "test": "jest"
   },
