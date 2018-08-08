@@ -1,0 +1,51 @@
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  border: 1px solid blue;
+  border-radius: 30px;
+  height: 40px;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  min-width: 200px;
+  width: 100%;
+}
+
+.add-todo-container {
+  width: 100%;
+}
+
+.todos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  width: 80%;
+}
+
+.input-container {
+  display: flex;
+  flex-flow: column;
+  font-size: 1.2rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 10px 0;
+}
+
+.label-name {
+  margin: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.list {
+  -webkit-box-shadow: 0px 6px 5px 6px rgba(0,0,0,0.22);
+  -moz-box-shadow: 0px 6px 5px 6px rgba(0,0,0,0.22);
+  box-shadow: 0px 6px 5px 6px rgba(0,0,0,0.22);
+  border: 0px solid transparent;
+  width: 100%;
+  padding: 0.5rem;
+}
