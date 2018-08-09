@@ -5,6 +5,7 @@ const todos = [
     date: 'Jan 5, 2018',
     difficulty: 'Medium',
     notes: 'When adding a new component, be sure to examine what kind of component it will be',
+    completed: false,
   },
   {
     id: '82hkas3',
@@ -12,6 +13,7 @@ const todos = [
     date: 'Mar 12, 2018',
     difficulty: 'Hard',
     notes: 'Containers can be difficult to understand, but with time you\'ll get it',
+    completed: false,
   },
   {
     id: 'h7js832',
@@ -19,6 +21,7 @@ const todos = [
     date: 'Apr 22, 2018',
     difficulty: 'Hard',
     notes: 'When you have a mutable state, be prepared for an onslaught of bugs. #BugHunt',
+    completed: false,
   },
   {
     id: '92uhu3i',
@@ -26,6 +29,7 @@ const todos = [
     date: 'May 13, 2018',
     difficulty: 'Easy',
     notes: 'What is it? Honestly, I\'m still trying to figure it out',
+    completed: false,
   },
   {
     id: 'qwerty',
@@ -33,6 +37,7 @@ const todos = [
     date: 'Jun 5, 2018',
     difficulty: 'Extra Hard',
     notes: 'Don\'t be fooled by this task. It can be pretty hard to find a good bagel...',
+    completed: false,
   },
 ];
 
