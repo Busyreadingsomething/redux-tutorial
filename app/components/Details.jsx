@@ -3,13 +3,13 @@ import { string } from 'prop-types';
 
 const Details = ({ date, difficulty, notes }) => (
   <div className="details">
-    <p>
+    <p className="date">
       {date}
     </p>
-    <p>
+    <p className="difficulty">
       {difficulty}
     </p>
-    <h4>
+    <h4 className="notes">
       {notes}
     </h4>
   </div>
