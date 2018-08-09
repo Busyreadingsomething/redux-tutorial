@@ -1,5 +1,5 @@
 import React from 'react';
-import { shape, string } from 'prop-types';
+import { func, shape, string } from 'prop-types';
 import Details from './Details';
 
 class Item extends React.Component {
@@ -10,19 +10,22 @@ class Item extends React.Component {
     };
   }
 
-  handleClick() {
+  handleFocus() {
     this.setState(({ focus }) => Object.assign({}, { focus: !focus }));
   }
 
   render() {
-    const { todo } = this.props;
+    const { todo, toggle } = this.props;
     const { text, ...newProps } = todo;
     const { focus } = this.state;
     return (
       <div className="item">
-        <h2 onClick={() => this.handleClick()}>
-          {text}
-        </h2>
+        <div className="item-splash">
+          <h2 onClick={() => this.handleFocus()}>
+            {text}
+          </h2>
+          <button onClick={() => toggle(todo.id)}>X</button>
+        </div>
         { focus && <Details {...newProps} /> }
       </div>
     )
@@ -36,6 +39,7 @@ Item.propTypes = {
     difficulty: string,
     notes: string,
   }).isRequired,
+  toggle: func.isRequired,
 };
 
 export default Item;
