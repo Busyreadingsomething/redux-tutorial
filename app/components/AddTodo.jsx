@@ -5,7 +5,7 @@ class AddTodo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      types: ['text', 'difficulty', 'date', 'notes'],
+      types: ['text', 'difficulty', 'notes'],
       text: '',
       difficulty: '',
       date: '',

@@ -4,12 +4,14 @@ import Item from './Item';
 
 const List = ({ todos, toggle }) => (
   <div className="list">
-    <h1>
+    <p className="list-title">
       Current Todos
-    </h1>
-    {
-      todos.map(todo => <Item key={todo.id} todo={todo} toggle={toggle} />)
-    }
+    </p>
+    <div className="list-content">
+      {
+        todos.map(todo => <Item key={todo.id} todo={todo} toggle={toggle} />)
+      }
+    </div>
   </div>
 );
 
