@@ -16,17 +16,21 @@ class Item extends React.Component {
 
   render() {
     const { todo, toggle } = this.props;
-    const { text, ...newProps } = todo;
+    const { text, completed, ...newProps } = todo;
     const { focus } = this.state;
+    const itemCompleted = completed ? 'item-completed' : null;
+    const buttonCompleted = completed ? 'button-completed': null;
     return (
       <div className="item">
-        <div className="item-splash">
-          <h2 onClick={() => this.handleFocus()}>
+        <div className="item-splash" onClick={() => this.handleFocus()}>
+          <p className={`item-title ${itemCompleted}`}>
             {text}
-          </h2>
-          <button onClick={() => toggle(todo.id)}>X</button>
+          </p>
+          { focus && <Details {...newProps} /> }
         </div>
-        { focus && <Details {...newProps} /> }
+        <button className={`item-toggle ${buttonCompleted}`} onClick={() => toggle(todo.id)}>
+          X
+        </button>
       </div>
     )
   }
