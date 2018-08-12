@@ -19,7 +19,7 @@ class Item extends React.Component {
     const { text, completed, ...newProps } = todo;
     const { focus } = this.state;
     const itemCompleted = completed ? 'item-completed' : null;
-    const buttonCompleted = completed ? 'button-completed': null;
+    const buttonCompleted = completed ? 'button-completed' : null;
     return (
       <div className="item">
         <div className="item-splash" onClick={() => this.handleFocus()}>
@@ -28,11 +28,15 @@ class Item extends React.Component {
           </p>
           { focus && <Details {...newProps} /> }
         </div>
-        <button className={`item-toggle ${buttonCompleted}`} onClick={() => toggle(todo.id)}>
+        <button
+          className={`item-toggle ${buttonCompleted}`}
+          onClick={() => toggle(todo.id)}
+          type="button"
+        >
           X
         </button>
       </div>
-    )
+    );
   }
 }
 

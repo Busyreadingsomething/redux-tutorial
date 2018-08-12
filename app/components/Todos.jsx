@@ -2,6 +2,7 @@ import React from 'react';
 import List from './List';
 import data from '../dummyData';
 import AddTodo from './AddTodo';
+import Filter from './Filter';
 
 class Todos extends React.Component {
   constructor(props) {
@@ -22,18 +23,24 @@ class Todos extends React.Component {
       return todo;
     });
 
-    this.setState(state => Object.assign({}, state, { todos: updated }), () => console.log(this.state));
+    this.setState(state => Object.assign({}, state, { todos: updated }));
+  }
+
+  changeFilter(e) {
+    const visibilityFilter = e.target.getAttribute('data-filter');
+    this.setState(state => Object.assign({}, state, { visibilityFilter }));
   }
 
   render() {
-    const { todos } = this.state;
+    const { todos, visibilityFilter } = this.state;
     return (
       <div className="todos">
         <h1>
           TODO MACHINE
         </h1>
+        <Filter select={e => this.changeFilter(e)} />
         <AddTodo />
-        <List todos={todos} toggle={id => this.handleToggle(id)} />
+        <List todos={todos} toggle={id => this.handleToggle(id)} filter={visibilityFilter} />
       </div>
     );
   }
