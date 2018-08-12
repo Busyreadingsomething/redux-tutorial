@@ -1,26 +1,31 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import List from '../../components/List';
 import data from '../../dummyData';
 import AddTodo from '../AddTodos/container';
 
 /**
-  The component below is a copy and paste from the components folder. You're tasked with the job to convert this component into
-  a stateless functional component with redux. YOU WILL NOT NEED TO ADJUST THE FILES IN THE COMPONENTS FOLDER TO DO ANYTHING.
+ * The component below is a copy and paste from the components folder. You're tasked with the job to
+ * convert this component into a stateless functional component with redux. YOU WILL NOT NEED TO
+ * ADJUST THE FILES IN THE COMPONENTS FOLDER TO DO ANYTHING.
+ *
+ * You will be designing the container here, so your mapStateToProps and
+ * mapDispatchToProps will be used here.
 
-  You will be designing the container here, so your mapStateToProps and mapDispatchToProps will be used here.
+ * HINTS:
+ * - Read the documentation
+ * - Follow the tests (they're designed to guide you along the way)
+ * - Take your time and reflect on your approach before you change anything.
+ *
+ * NOTES:
+ * - There are a lot of different ways people organize their code, so don't assume this
+ *   is the only way to write redux code
+ * - Remember to evaluate the differences between the component and the container once you have
+ *   completed the tests and made everything render properly
+ */
 
-  HINTS:
-  - Read the documentation
-  - Follow the tests (they're designed to guide you along the way)
-  - Take your time and reflect on your approach before you change anything.
-
-  NOTES:
-  - There are a lot of different ways people organize their code, so don't assume this is the only way to write redux code
-  - Remember to evaluate the differences between the component and the container once you have completed the tests and made
-    everything render properly
-*/
-
-class Todos extends React.Component {
+// DON'T REMOVE THE EXPORT WHEN YOU REFACTOR THIS CODE
+export class Todos extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -39,7 +44,7 @@ class Todos extends React.Component {
       return todo;
     });
 
-    this.setState(state => Object.assign({}, state, { todos: updated }), () => console.log(this.state));
+    this.setState(state => Object.assign({}, state, { todos: updated }));
   }
 
   render() {
@@ -56,4 +61,11 @@ class Todos extends React.Component {
   }
 }
 
-export default Todos;
+// FILL THESE METHODS OUT - Don't forget to read your documentation
+export const mapStateToProps = () => ({});
+
+export const mapDispatchToProps = () => ({});
+
+const TodosContainer = connect()();
+
+export default TodosContainer;
