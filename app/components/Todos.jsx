@@ -31,6 +31,14 @@ class Todos extends React.Component {
     this.setState(state => Object.assign({}, state, { visibilityFilter }));
   }
 
+  addTodo(todo) {
+    this.setState((state) => {
+      const { todos } = state;
+      todos.push(todo);
+      return Object.assign({}, state, { todos });
+    });
+  }
+
   render() {
     const { todos, visibilityFilter } = this.state;
     return (
@@ -39,7 +47,7 @@ class Todos extends React.Component {
           TODO MACHINE
         </h1>
         <Filter select={e => this.changeFilter(e)} />
-        <AddTodo />
+        <AddTodo add={todo => this.addTodo(todo)} />
         <List todos={todos} toggle={id => this.handleToggle(id)} filter={visibilityFilter} />
       </div>
     );

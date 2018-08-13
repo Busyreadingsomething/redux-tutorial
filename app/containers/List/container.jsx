@@ -28,21 +28,20 @@ import Item from '../../components/Item';
  *   completed the tests and made everything render properly
  */
 
-class List extends React.PureComponent {
-  filtering() {
-    const { todos, filter } = this.props;
-    let filtered = todos;
-    if (filter === 'SHOW_COMPLETED') {
-      filtered = todos.filter(todo => todo.completed === true);
-    } else if (filter === 'SHOW_ACTIVE') {
-      filtered = todos.filter(todo => todo.completed === false);
-    }
-    return filtered;
+export const filtering = (todos, filter) => {
+  let filtered = todos;
+  if (filter === 'SHOW_COMPLETED') {
+    filtered = todos.filter(todo => todo.completed === true);
+  } else if (filter === 'SHOW_ACTIVE') {
+    filtered = todos.filter(todo => todo.completed === false);
   }
+  return filtered;
+};
 
+class List extends React.PureComponent {
   render() {
     const { todos, toggle, filter } = this.props;
-    const filtered = this.filtering(todos, filter);
+    const filtered = filtering(todos, filter);
     return (
       <div className="list">
         <p className="list-title">
