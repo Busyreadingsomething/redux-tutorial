@@ -4,7 +4,16 @@
   "description": "A 20 min quick start guide to utilize redux in your application",
   "main": "server/index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage --verbose"
+  },
+  "jest": {
+    "testURL": "http://localhost/",
+    "setupTestFrameworkScriptFile": "./setUpTests.js",
+    "testEnvironment": "node",
+    "unmockedModulePathPatterns": [
+      "node_modules/react/",
+      "node_modules/enzyme/"
+    ]
   },
   "repository": {
     "type": "git",
@@ -36,6 +45,8 @@
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.4.1",
+    "enzyme-adapter-react-16": "^1.2.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-plugin-import": "^2.13.0",
