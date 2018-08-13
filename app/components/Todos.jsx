@@ -35,7 +35,7 @@ class Todos extends React.Component {
     const { todos, visibilityFilter } = this.state;
     return (
       <div className="todos">
-        <h1>
+        <h1 className="app-title">
           TODO MACHINE
         </h1>
         <Filter select={e => this.changeFilter(e)} />
