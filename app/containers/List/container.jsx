@@ -38,7 +38,7 @@ export const filtering = (todos, filter) => {
   return filtered;
 };
 
-class List extends React.PureComponent {
+export class List extends React.PureComponent {
   render() {
     const { todos, toggle, filter } = this.props;
     const filtered = filtering(todos, filter);
@@ -62,5 +62,3 @@ List.propTypes = {
   toggle: func.isRequired,
   filter: string.isRequired,
 };
-
-export default List;
