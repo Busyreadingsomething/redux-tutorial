@@ -60,10 +60,12 @@ class AddTodo extends React.Component {
               key={type}
               type={type}
               change={e => this.handleChange(e)}
-              val={this.state[type]}
+              val={this.state[type]} // eslint-disable-line
             />))
         }
-        <button type="button" onClick={() => this.handleClick()}>ADD TODO</button>
+        <button type="button" onClick={() => this.handleClick()}>
+          ADD TODO
+        </button>
       </div>
     );
   }

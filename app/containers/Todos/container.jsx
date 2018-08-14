@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Filter from '../../components/Filter';
 import List from '../../components/List';
-import data from '../../dummyData';
 import AddTodo from '../AddTodos/container';
+import data from '../../dummyData';
 
 /**
  * The component below is a copy and paste from the components folder. You're tasked with the job to
@@ -24,7 +25,7 @@ import AddTodo from '../AddTodos/container';
  *   completed the tests and made everything render properly
  */
 
-// DON'T REMOVE THE EXPORT WHEN YOU REFACTOR THIS CODE
+// Make the necessary changes to this component
 export class Todos extends React.Component {
   constructor(props) {
     super(props);
@@ -47,15 +48,29 @@ export class Todos extends React.Component {
     this.setState(state => Object.assign({}, state, { todos: updated }));
   }
 
+  changeFilter(e) {
+    const visibilityFilter = e.target.getAttribute('data-filter');
+    this.setState(state => Object.assign({}, state, { visibilityFilter }));
+  }
+
+  addTodo(todo) {
+    this.setState((state) => {
+      const { todos } = state;
+      todos.push(todo);
+      return Object.assign({}, state, { todos });
+    });
+  }
+
   render() {
-    const { todos } = this.state;
+    const { todos, visibilityFilter } = this.state;
     return (
       <div className="todos">
-        <h1>
+        <h1 className="app-title">
           TODO MACHINE
         </h1>
-        <AddTodo />
-        <List todos={todos} toggle={id => this.handleToggle(id)} />
+        <Filter select={e => this.changeFilter(e)} />
+        <AddTodo add={todo => this.addTodo(todo)} />
+        <List todos={todos} toggle={id => this.handleToggle(id)} filter={visibilityFilter} />
       </div>
     );
   }
