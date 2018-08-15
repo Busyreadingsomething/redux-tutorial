@@ -39,6 +39,13 @@ You will need to:
 4. Refactor the Todos *Component* to a *Container*
 5. Connect the Container to the store
 
+**NOTE**
+To see if your redux code it working, be sure to change the bundle name in the html script.
+**REACT ONLY APP:** ```base.bundle.js```
+**REDUX APP:** ```redux.bundle.js```
+
+*THIS WILL BE UPDATED TO BE MORE USER FRIENDLY, GOD WILLING*
+
 It sounds simple, and it really is, however, you will get stuck from time to time, and wonder why you even decided to use this tutorial. Fret not, the fact that you learned React, means that you are at least comfortable with One-Way Data Binding. Passing props is familiar for you, and now you just need to add a little spice to have a component connect to the store.
 
 Some very useful links for you to look over:
