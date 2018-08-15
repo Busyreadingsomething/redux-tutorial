@@ -1,15 +1,10 @@
 import React from 'react';
-import {
-  arrayOf,
-  object,
-  string,
-  func,
-} from 'prop-types';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import data from '../../dummyData';
 import Filter from '../../components/Filter';
 import List from '../../components/List';
 import AddTodo from '../../components/AddTodo';
-import { addTodo, toggleDodo, setVisibilityFilter } from '../../actions';
 
 /**
  * The component below is a copy and paste from the components folder. You're tasked with the job to
@@ -33,50 +28,62 @@ import { addTodo, toggleDodo, setVisibilityFilter } from '../../actions';
 
 // Make the necessary changes to this component
 export class Todos extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      visibilityFilter: 'SHOW_ALL',
+      todos: data,
+    };
+  }
+
+  handleToggle(id) {
+    const { todos } = this.state;
+    const updated = todos.map((todo) => {
+      if (todo.id === id) {
+        const completed = !todo.completed;
+        return Object.assign({}, todo, { completed });
+      }
+      return todo;
+    });
+
+    this.setState(state => Object.assign({}, state, { todos: updated }));
+  }
+
+  changeFilter(e) {
+    const visibilityFilter = e.target.getAttribute('data-filter');
+    this.setState(state => Object.assign({}, state, { visibilityFilter }));
+  }
+
+  addTodo(todo) {
+    this.setState((state) => {
+      const { todos } = state;
+      todos.push(todo);
+      return Object.assign({}, state, { todos });
+    });
+  }
+
   render() {
-    const {
-      addNewTodo,
-      todos,
-      visibilityFilter,
-      toggle,
-      changeFilter,
-    } = this.props;
+    const { todos, visibilityFilter } = this.state;
     return (
       <div className="todos">
         <h1 className="app-title">
           TODO MACHINE
         </h1>
-        <Filter select={e => changeFilter(e)} />
-        <AddTodo add={todo => addNewTodo(todo)} />
-        <List todos={todos} toggle={id => toggle(id)} filter={visibilityFilter} />
+        <Filter select={e => this.changeFilter(e)} />
+        <AddTodo add={todo => this.addTodo(todo)} />
+        <List todos={todos} toggle={id => this.handleToggle(id)} filter={visibilityFilter} />
       </div>
     );
   }
 }
 
-Todos.propTypes = {
-  todos: arrayOf(object).isRequired,
-  visibilityFilter: string.isRequired,
-  toggle: func.isRequired,
-  changeFilter: func.isRequired,
-  addNewTodo: func.isRequired,
-};
+Todos.propTypes = {};
 
 // FILL THESE METHODS OUT - Don't forget to read your documentation
-export const mapStateToProps = state => ({
-  todos: state.todoReducer,
-  visibilityFilter: state.visibilityReducer,
-});
+export const mapStateToProps = state => ({});
 
-export const mapDispatchToProps = dispatch => ({
-  toggle: id => dispatch(toggleDodo(id)),
-  changeFilter: e => dispatch(setVisibilityFilter(e)),
-  addNewTodo: todo => dispatch(addTodo(todo)),
-});
+export const mapDispatchToProps = dispatch => ({});
 
-const TodosContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Todos);
+const TodosContainer = connect()();
 
 export default TodosContainer;
