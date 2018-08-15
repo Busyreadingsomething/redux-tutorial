@@ -4,7 +4,9 @@
   "description": "A 20 min quick start guide to utilize redux in your application",
   "main": "server/index.js",
   "scripts": {
-    "test": "jest --coverage --verbose"
+    "test": "jest --coverage --verbose",
+    "start": "nodemon server/index.js",
+    "buildDev": "webpack -d -w"
   },
   "jest": {
     "testURL": "http://localhost/",
