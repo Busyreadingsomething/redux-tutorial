@@ -1,4 +1,4 @@
-import constants from './constants';
+import { EXAMPLE_TYPE } from '../constants';
 
 /**
  * You are going to design your actions in this folder. Keeping your code organized is far more
@@ -19,11 +19,7 @@ import constants from './constants';
  * - Be naming is important, so be sure to check the tests for the expected names
  */
 
-const ACTION = data => ({
-  type: constants.ACTION_TYPE,
+export const exampleAction = data => ({ // eslint-disable-line import/prefer-default-export
+  type: EXAMPLE_TYPE,
   data,
 });
-
-export default {
-  ACTION,
-};

@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import data from '../../dummyData';
 import Filter from '../../components/Filter';
 import List from '../../components/List';
-import AddTodo from '../AddTodos/container';
-import data from '../../dummyData';
+import AddTodo from '../../components/AddTodo';
 
 /**
  * The component below is a copy and paste from the components folder. You're tasked with the job to
@@ -25,7 +26,11 @@ import data from '../../dummyData';
  *   completed the tests and made everything render properly
  */
 
-// Make the necessary changes to this component
+/**
+ * FIRST GOAL. MAKE THIS A FUNCTIONAL STATELESS CONTAINER
+ * Namely, there should be no state, and no methods built in this component
+ */
+
 export class Todos extends React.Component {
   constructor(props) {
     super(props);
@@ -76,10 +81,12 @@ export class Todos extends React.Component {
   }
 }
 
-// FILL THESE METHODS OUT - Don't forget to read your documentation
-export const mapStateToProps = () => ({});
+Todos.propTypes = {};
 
-export const mapDispatchToProps = () => ({});
+// FILL THESE METHODS OUT - Don't forget to read your documentation
+export const mapStateToProps = state => ({});
+
+export const mapDispatchToProps = dispatch => ({});
 
 const TodosContainer = connect()();
 

@@ -7,9 +7,4 @@
  * HINTS:
  * - Both your reducer and actions will be using this file so make use of it
  */
-
-export const ACTION_TYPE = 'ACTION_TYPE';
-
-export default {
-  ACTION_TYPE,
-};
+export const EXAMPLE_TYPE = 'EXAMPLE_TYPE'; // eslint-disable-line import/prefer-default-export
