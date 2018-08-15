@@ -7,6 +7,4 @@
  * HINTS:
  * - Both your reducer and actions will be using this file so make use of it
  */
-export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER';
-export const TOGGLE_TODO = 'TOGGLE_TODO';
-export const ADD_TODO = 'ADD_TODO';
+export const EXAMPLE_TYPE = 'EXAMPLE_TYPE'; // eslint-disable-line import/prefer-default-export
