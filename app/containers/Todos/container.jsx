@@ -26,8 +26,12 @@ import AddTodo from '../../components/AddTodo';
  *   completed the tests and made everything render properly
  */
 
-// Make the necessary changes to this component
-export class Todos extends React.PureComponent {
+/**
+ * FIRST GOAL. MAKE THIS A FUNCTIONAL STATELESS CONTAINER
+ * Namely, there should be no state, and no methods built in this component
+ */
+
+export class Todos extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
