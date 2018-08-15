@@ -1,4 +1,4 @@
-import constants from './constants';
+import { SET_VISIBILITY_FILTER, ADD_TODO, TOGGLE_TODO } from '../constants';
 
 /**
  * You are going to design your actions in this folder. Keeping your code organized is far more
@@ -19,11 +19,17 @@ import constants from './constants';
  * - Be naming is important, so be sure to check the tests for the expected names
  */
 
-const ACTION = data => ({
-  type: constants.ACTION_TYPE,
-  data,
+export const setVisibilityFilter = e => ({ // eslint-disable-line import/prefer-default-export
+  type: SET_VISIBILITY_FILTER,
+  filter: e.target.getAttribute('data-filter'),
 });
 
-export default {
-  ACTION,
-};
+export const toggleDodo = id => ({
+  type: TOGGLE_TODO,
+  id,
+});
+
+export const addTodo = todo => ({
+  type: ADD_TODO,
+  todo,
+});

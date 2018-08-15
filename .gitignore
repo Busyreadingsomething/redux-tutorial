@@ -2,3 +2,5 @@ node_modules/
 coverage/
 bundle.js
 __snapshots__/
+base.bundle.js
+redux.bundle.js

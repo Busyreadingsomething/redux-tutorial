@@ -1,10 +1,13 @@
 const path = require('path');
 
 module.exports = {
-  entry: path.resolve(__dirname, './app/app.jsx'),
+  entry: {
+    base: path.resolve(__dirname, './app/app.jsx'),
+    redux: path.resolve(__dirname, './app/reduxApp.jsx'),
+  },
   output: {
     path: path.resolve(__dirname, './public'),
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
   },
   module: {
     rules: [
