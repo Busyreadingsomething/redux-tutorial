@@ -28,7 +28,7 @@ class AddTodo extends React.Component {
     const update = {
       [type]: value,
     };
-    this.setState(state => Object.assign({}, state, update), () => console.log(this.state));
+    this.setState(state => Object.assign({}, state, update));
   }
 
   handleClick() {
